@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registro</title>
+	<link rel="stylesheet" type="text/css" href="CSS/styleform.css"><script type="text/javascript" src="JS/scriptCompras.js"></script>
+</head>
+<body>
+	<header id="titulo">
+		<h1>CrashDesing</h1>
+	</header>
+	<nav id="navegacion">
+		<a href="seccionMasc.html">
+			Hombre/niño
+		</a>
+		<a href="seccionFem.html">
+			Mujer/niña
+		</a>
+	</nav>
+	<main class="main">
+	<div class="background">
+		<div id="menuSusc">
+			<form name="frm">
+				<table border="0" id="tablaFormulario">
+					<legend id="suscTitulo">REGISTRO</legend>
+					<tr>
+						<td class="celdaLeyenda"><legend class="subTitulo">Datos de inicio de sesión:</legend></td>
+					</tr>
+    				<tr>
+				      	<td><input type="text" id="nombreUsuario" class="cajaForm" size="40vw" placeholder="NOMBRE DE USUARIO*" required></td>
+				      	<td><input type="password" id="passwdUsuario" class="cajaForm" size="40vw" placeholder="CONTRASEÑA*" required></td>
+				    </tr>
+					<tr>
+						<td class="celdaLeyenda"><legend class="subTitulo">Datos personales:</legend></td>
+					</tr>
+				    <tr>
+				      	<td><input type="text" id="nombreCliente" class="cajaForm" size="40vw" placeholder="NOMBRE*" required></td>
+				      	<td><input type="text" id="apellidosCliente" class="cajaForm" size="40vw" placeholder="APELLIDOS*" required></td>
+				    </tr>
+				    <tr>
+				      	<td><input type="text" id="dniCliente" class="cajaForm" size="40vw" placeholder="DNI*" required></td>
+				      	<td>
+				      		<select id="elegirSexo">
+				      			<option selected>SEXO*</option>
+				      			<option>HOMBRE</option>
+				      			<option>MUJER</option>
+				      			<option>Prefiero no decirlo</option>
+				      		</select>
+				      	</td>
+				    </tr>
+				    <tr>
+						<td class="celdaLeyenda"><legend class="subTitulo">Datos de contacto:</legend></td>
+					</tr>
+				    <tr>
+				    	<td><input type="text" id="correo" class="cajaForm" size="40vw" placeholder="CORREO@EXAMPLE.COM*" required></td>
+				    	<td><input type="text" id="tlfnCliente" class="cajaForm" size="40vw" placeholder="TELEFONO*" required></td>
+				    </tr>
+				    <tr>
+						<td class="celdaLeyenda"><legend class="subTitulo">Detalles de envío:</legend></td>
+					</tr>
+					<tr>
+				     	<td><input type="text" name="Poblacion" class="cajaForm" size="40vw" placeholder="POBLACIÓN"></td>
+				     	<td><input type="text" name="codPostal" class="cajaForm" size="40vw" placeholder="CODIGO POSTAL"></td>
+				    </tr>
+				    <tr>
+				      	<td><input type="text" name="calle" class="cajaForm" size="40vw" placeholder="CALLE"></td>
+				      	<td><input type="text" name="puertaNumero" class="cajaForm" size="40vw" placeholder="NUMERO Y PISO"></td>
+				    </tr>
+				  </table>
+				  <div id="terminosCondiciones">
+				  	<input type="checkbox" id="checkTerminos" required>
+				  	<label>Al suscribirte aceptas los términos y condiciones*</label>
+				  </div>
+				  <div>
+				  	
+				  	<input type="button" value="REGISTRARME" class="botonPres" onclick="registroCompleto()">
+				  </div>
+				  
+				  
+			</form>
+		</div>
+	</div>
+	</main>
+	<footer id="copy">
+    <!--PARTE IZQUIERDA-->
+    <div id="enlacesCopy">
+      <p class="copyPar">
+        <p>
+          <ion-item>
+          <a href="https://feedreader.com/online/#/reader/category/0/feed/22226190/" class="enlaceCopyrigth">
+              <label>RSS</label>
+            </a>
+            <img src="img/Otros/rssIMG.jpg" class="rssImagen">
+        </ion-item>
+        </p>
+        <p>
+          <ion-item>
+            <ion-icon class="iconCopy" name="logo-instagram"></ion-icon>
+            <a href="https://www.instagram.com/crash.maria/" class="enlaceCopyrigth">
+              <label>Síguenos en Instagram</label>
+            </a>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-icon class="iconCopy" name="logo-facebook"></ion-icon>
+            <a href="https://www.facebook.com/maria.cornejo.391" class="enlaceCopyrigth">
+              <label>Síguenos en Facebook</label>
+            </a>
+        </ion-item>
+        </p>
+      </p>
+    </div>
+    <!--PARTE DERECHA-->
+    <div id="creditosConsultas">
+      <p class="copyPar">
+        <p>
+          <ion-item class="quienSomos">
+          <a href="mailto:cornejomaria200@gmail.com" class="enlaceCopyrigth">
+          <ion-icon name="mail-outline" class="iconCopy"></ion-icon>
+            <label>Contacto</label>
+            </a>
+        </ion-item>
+        </p>
+        <label>
+          &copy; Todos los derechos reservados a CrashDesings <br>
+          Cualquier copia o uso indebido de imágenes o marcas será penalmente castigado.
+        </label>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

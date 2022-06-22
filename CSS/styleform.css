@@ -1,0 +1,203 @@
+html, body {
+	margin: 0;
+	font-family: Arial;
+}
+* {
+	color: #9905a3;
+}
+#titulo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 6.5vw;
+	font-size: 2vw;
+	background-color: white;
+}
+h1 {
+	margin: 0;
+}
+
+/*BARRA NAVEGACIÓN*/
+
+#navegacion {
+	z-index: 1001;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	height: 4vw;
+	border-top: 1px solid #9905a3;
+	border-bottom: 1px solid #9905a3;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background-color: rgb(255, 255, 255);
+}
+#navegacion a {
+	text-decoration: none;
+	font-size: 2vw;
+	margin: auto;
+}
+#navegacion a:hover {
+	color: #cf00de;
+}
+
+/*CUERPO DE LA PÁGINA*/
+
+.main {
+	background-image: url("../img/Fondos/fondoFormulario.jpg");
+	background-size: cover;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+}
+.background {
+	backdrop-filter: blur(3px);
+}
+
+/*MENÚ SUSCRIPCIÓN*/
+
+#menuSusc {
+	background-color: rgba(255, 255, 255, 0.3);
+	box-shadow: 0px 0px 40vw rgba(0, 0, 0, 0.5);
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+	padding: 2vw;
+	max-width: 80rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+#tablaFormulario {
+	float: left;
+	font-size: 1.3em;
+	margin-top: 1.5vw;
+	margin-bottom: 2rem;
+	margin-right: 1vw;
+}
+tr {
+	display: flex;
+	align-items: center;
+	margin-top: 2vw;
+}
+td {
+	width: 25vw;
+}
+#suscTitulo {
+	font-size: 3vw;
+}
+.subTitulo {
+	font-size: 1.5vw;
+}
+.celdaLeyenda {
+	text-align: left;
+	padding-left: 2vw;
+}
+.cajaForm {
+	background-color: transparent;
+	font-size: 1vw;
+	margin-bottom: 1vw;
+	border: none;
+  	border-bottom: 2px solid #9905a3;
+}
+.cajaForm:focus {
+	outline-width: 0;
+	border-bottom: 2px solid blueviolet;
+	transition: 2s;
+}
+.cajaForm::placeholder {
+	color: #9905a3;
+	font-size: 1vw;
+}
+.cajaForm:focus::placeholder {
+	color: transparent;
+	transition: 0.5s;
+}
+#elegirSexo {
+	font-size: 1vw;
+	width: 20vw;
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid #9905a3;
+	text-align: center;
+}
+#elegirSexo:focus {
+	outline-width: 0;
+}
+#terminosCondiciones {
+	text-align: left;
+	padding: 2vw;
+	font-size: 1vw;
+}
+#terminosCondiciones input {
+	width: 1vw;
+}
+.botonPres {
+	font-size: 1.6vw;
+	font-weight: bold;
+	padding-top: 1.2vw;
+	padding-bottom: 1.2vw;
+	padding-left: 2vw;
+	padding-right: 2vw;
+  	background-color: transparent;
+  	color: #9905a3;
+  	border: 2px solid #9905a3;
+  	transition-duration: 0.4s;
+}
+.botonPres:hover {
+	cursor: pointer;
+  	background-color: #9905a3;
+  	color: white;
+}
+
+/*COPYRIGHT DE LA PÁGINA (BARRA INFERIOR)*/
+
+#copy {
+	font-size: 1vw;
+	width: 100%;
+	height: 7vw;
+	background-color: #0f0f0f;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.rssImagen {
+	max-width: 2.3vw;
+	vertical-align: middle;
+}
+.copyPar {
+	margin-top: 0;
+	color: white;
+	display: flex;
+	flex-direction: column;
+}
+.copyPar a {
+	color: white;
+	text-decoration: none;
+}
+.iconCopy {
+    vertical-align: middle;
+    color: white;
+}
+#copy label{ 
+	text-decoration: none;
+	color: white;
+    vertical-align: middle;
+}
+#enlacesCopy {
+	margin-left: 2vw;
+	float: left;
+}
+#creditosConsultas {
+	color: white;
+	margin-right: 2vw;
+	text-align: right;
+	float: right;
+}
+.enlaceCopyrigth {
+	text-decoration: none;
+}
+.enlaceCopyrigth label {
+	cursor: pointer;
+}

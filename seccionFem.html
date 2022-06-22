@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sección femenina</title>
+  <link rel="stylesheet" type="text/css" href="CSS/style.css" media="screen">
+</head>
+<body onload="valorTotal()">
+<!--DECLARACIÓN DE SCRIPTS-->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="JS/scriptCompras.js"></script>
+<!--MENÚ DE PAGO CON TARJETA DE CRÉDITO-->
+  <div id="fondoTarjeta">
+    <div id="pagoTarjeta">
+        <div id="botonCerrarTarjeta" onclick="ocultarTarjeta()">
+          <ion-icon name="close-outline" class="cerrarCarrito"></ion-icon>
+        </div>
+        <div class="colTarjeta">
+            <div class="tarjeta">
+              <span class="chip"></span>
+              <div class="barraMagnetica"></div>
+              <span class="numeroTarjeta">●●●● ●●●● ●●●● ●●●● </span>
+              <div class="fecha"><span class="modeloFecha">MM / AAAA</span></div>
+              <span class="nombreTarjeta">NOMBRE</span>
+            </div>
+          </div>
+          <div class="colDatos">
+          <form>
+            <label>Número de tarjeta</label><br>
+            <input type="text" maxlength="19" required/><br>
+            <label>Fecha de caducidad</label><br>
+            <input type="text" placeholder="MM / YYYY" required/><br>
+            <label>Número de seguridad CVC</label><br>
+            <input type="text" placeholder="CVC" maxlength="3"/><br>
+            <button id="botonCompra" onclick="pagoCompleto()"><label id="pagarTarjeta"></label></button>
+          </form>
+        </div>
+    </div>
+  </div>
+<!--DIV BIOGRAFÍA DE LA EMPRESA-->
+  <div id="fondoQuienSomos">
+    <div id="quienesSomos">
+      <div id="cerrarNosotros" onclick="cerrarNosotros()">
+        <ion-icon name="close-outline" class="cerrarCarrito"></ion-icon>
+      </div>
+      <p class="iQuienSomos">
+        <ion-icon name="information-outline" style="color: white;"></ion-icon>
+      </p>
+      <p>
+        &emsp;CrashDesing es una pequeña empresa que ofrece venta de camisetas alrededor de toda la península, con el fin de dar a sus clientes diseños únicos en cada uno de los productos que ofrecemos aportando así mayor visibilidad a la empresa y ayudando a que la misma disponga de cada día más solidez ante sus diferentes públicos y sus mercados.
+      </p> 
+      <p>
+        &emsp;Ponemos a su servicio la experiencia de todo el equipo para cada diseño siendo seleccionado cuidadosamente el miembro del equipo a realizar cada trabajo acorde con el nivel del encargo.<br>
+        Nuestro éxito se basa fundamentalmente en dos pilares fundamentales: la calidad de nuestros diseños a largo plazo, así como la duración de los mismos frente a los lavados y el uso consecutivo de nuestras prendas.
+      </p>
+      <p>
+        &emsp;La experiencia profesional de todos los miembros parte de estudios en artes así como base en diseño realizando pruebas previas.
+      </p>
+      <p>
+        &emsp;Si deseas conocer cualquier otro dato de la empresa por favor no dudes en preguntar por cualquiera de los medios que facilitamos.
+      </p>
+    </div>
+  </div>
+<!--ANCLA SUPERIOR-->
+  <a name="inPag"></a>
+<!--CABECERA-->
+  <header id="titulo">
+    <h1>CrashDesing</h1>
+  </header>
+<!--BARRA DE NAVEGACIÓN-->
+  <nav id="navegacion">
+    <a class="enlaceA" onclick="abrirCarrito()">
+      <ion-item>
+          <ion-icon class="iconoCarrito" name="cart-outline"></ion-icon>
+          <label id="valorCarrito"></label>
+      </ion-item>
+    </a>
+    <a href="seccionMasc.html" class="enlaceA">
+      Hombre/niño 
+    </a>
+    <a class="enlaceA" onclick="abrirNosotros()">
+      Nosotros
+    </a>
+    <a href="suscripcion.html" class="enlaceA">
+      Suscripción
+    </a>
+  </nav>
+<!--CUERPO DE LA PÁGINA-->
+  <main class="main">
+    <!--CARRITO DE LA COMPRA-->
+    <div id="carritoCompra" class="carrito">
+      <div class="cerrarCarrito" onclick="cerrarCarrito()">
+        <ion-icon name="close-outline" class="cerrarCarrito"></ion-icon>
+      </div>
+      <span id="cantidadCarrito"></span>
+      <div id="cont3"></div>
+      <input type="button" value="PAGAR CON TARJETA" class="botonPres" onclick="mostrarTarjeta()">
+    </div> 
+    <!--CAPA CON BLUR PARA EL FONDO-->
+    <div id="background">
+    <!--ANCLA PARA DIRIGIR AL FINAL-->
+    <div class="ancla">
+      <a href="seccionFem#finPag" class="enlaceAncla">
+        <ion-item>
+          <label class="botonAncla">Ir hacia abajo</label>
+            <ion-icon class="icon" name="arrow-down-outline"></ion-icon> 
+        </ion-item>
+      </a>
+    </div>
+    <!--CUADRO CON TABLA DE PRECIOS Y EL CONFIGURADOR-->
+    <div id="tablaPrecios">
+      <p class="tituloseccion">TABLA DE PRECIOS</p>
+      <div id="contenedorPrecios">
+        <!--PRECIOS-->
+        <table border="1" cellspacing="0" id="Precios">
+            <thead>
+              <tr>
+                <th rowspan="2"><ion-icon name="pricetags-outline" style="font-size: 3vw;"></ion-icon></th>
+                <th colspan="2">Camiseta negra</th>
+                <th colspan="2">Camiseta blanca/gris</th>
+                <th colspan="2">Camiseta de otro color</th>
+              </tr>
+              <tr>
+                <th>En color</th>
+                  <th>Sin color</th>
+                  <th>En color</th>
+                  <th>Sin color</th>
+                  <th>En color</th>
+                  <th>Sin color</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+                  <th>MUJER</th>
+                  <td>17 €</td>
+                  <td>15 €</td>
+                  <td>15 €</td>
+                  <td>12 €</td>
+                  <td>14 €</td>
+                  <td>13 €</td>
+              </tr>
+              <tr>
+                  <th>NIÑA</th>
+                  <td>15 €</td>
+                  <td>12 €</td>
+                  <td>12 €</td>
+                  <td>10 €</td>
+                <td>13 €</td>
+                <td>11 €</td>
+              </tr>
+              <tr>
+                  <th>BEBÉ</th>
+                  <td>12 €</td>
+                  <td>10 €</td>
+                  <td>9 €</td>
+                  <td>7 €</td>
+                <td>8 €</td>
+                <td>7 €</td>
+              </tr>
+          </tbody>
+        </table>
+        <br>
+        <!--CONFIGURAR PRECIO-->
+        <fieldset>
+          <legend class="tituloFieldset">PRESUPUESTO</legend>
+            <form name="presupuesto">
+              <table border="0" id="tablaForm1">
+                <tr>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="220vw">
+                    <label>Persona</label>
+                    <select id="persona">
+                      <optgroup label="Elegir persona">
+                        <option value="hombre">Hombre</option>
+                        <option selected value="mujer">Mujer</option>
+                        <option value="niño">Niño/niña</option>
+                        <option value="bebé">Bebé</option>
+                      </optgroup>
+                    </select>
+                  </td>
+                  <td width="220vw">
+                    <label>Camiseta</label>
+                    <select id="colorCamiseta">
+                      <optgroup label="Color camiseta:">
+                        <option selected value="color negro">Negra</option>
+                        <option value="color blanco/gris">Blanca/gris</option>
+                        <option value="otro color">Otro color</option>
+                      </optgroup>
+                    </select>
+                  </td>
+                  <td width="220vw">
+                    <label>Talla</label>
+                    <select id="talla">
+                      <optgroup label="Tallas adulto:">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option selected value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                      </optgroup>
+                      <optgroup label="Tallas niño:">
+                        <option value="2 años">2 años</option>
+                        <option value="4 años">4 años</option>
+                        <option value="6 años">6 años</option>
+                        <option value="8 años">8 años</option>
+                        <option value="10 años">10 años</option>
+                        <option value="12 años">12 años</option>
+                        <option value="14 años">14 años</option>
+                        <option value="16 años">16 años</option>
+                      </optgroup>
+                      <optgroup label="Tallas bebé:">
+                        <option value="0 meses">0 meses</option>
+                        <option value="3 meses">3 meses</option>
+                        <option value="6 meses">6 meses</option>
+                        <option value="12 meses">12 meses</option>
+                        <option value="18 meses">18 meses</option>
+                        <option value="24 meses">24 meses</option>
+                      </optgroup>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                </tr>
+                  <tr>
+                    <td><label>Color del dibujo </label></td>
+                    <td ><input type="radio" name="color" size="30em" id="colorDibujo" checked value="dibujo en color" class="seleccionRadio">
+                    <label class="seleccionRadio">En color </label></td>
+                    <td align="center"><input type="button" value="AÑADIR AL CARRITO" class="botonPres" onclick="obtenerPrecio()"></td>
+                  </tr>
+                  <tr>
+                    <td><label></label></td>
+                    <td><input type="radio" name="color" size="30em" id="colorDibujo" value="dibujo en blanco y negro" class="seleccionRadio">
+                    <label class="seleccionRadio">En blanco y negro</label></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><label for="subirImagenPers"><input type="file" name="" value="Hola" size="20" id="subirImagenPers"><span class="subirArch"><ion-icon name="cloud-upload-outline" class="iconoSubirArch"></ion-icon> SUBIR IMAGEN</span></label></td>
+                    <td><input type="radio" name="color" size="30em" id="colorDibujo" value="diseño personalizado" class="seleccionRadio">
+                    <label class="seleccionRadio">Diseño personalizado</label></td>
+                    <td><label></label></td>
+                  </tr>
+                </table>
+            </form>
+        </fieldset>
+      </div>
+    </div>
+    <!--CONTENEDOR DERECHO DE IMÁGENES-->
+    <div id="images">
+      <!--AÑADIR IMÁGENES DE NIÑA-->
+      <div id="filaNiños" class="fila">
+        <p class="tituloseccion">NIÑA</p>
+<!--COPIAR Y REEMPLAZAR DATOS PARA AÑADIR IMAGENES NUEVAS-->
+        <a class="oscurecer">
+          <img class="imagen" src="img/Mujer-niña/niña1.jpg" onmouseover="document.getElementById('niña1').style.visibility='visible'"; onmouseout="document.getElementById('niña1').style.visibility='hidden'";>
+        </a>
+        <p id="niña1" class="leyenda">
+          Ejemplo niña
+        </p>
+<!--FIN PARRAFO A COPIAR-->
+        <a class="oscurecer">
+          <img class="imagen" src="img/Mujer-niña/niña2.jpg" onmouseover="document.getElementById('niña2').style.visibility='visible'"; onmouseout="document.getElementById('niña2').style.visibility='hidden'";>
+        </a>
+        <p id="niña2" class="leyenda">
+          Ejemplo niña 2
+        </p>
+      </div>
+      <!--AÑADIR IMÁGENES DE MUJER-->
+      <div id="filaHombre-mujer" class="fila">
+        <p class="tituloseccion">MUJER</p>
+        <a class="oscurecer">
+          <img class="imagen" src="img/Mujer-niña/mujer1.jpg" onmouseover="document.getElementById('mujer1').style.visibility='visible'"; onmouseout="document.getElementById('mujer1').style.visibility='hidden'";>
+        </a>
+        <p id="mujer1" class="leyenda">
+          Ejemplo mujer
+        </p>
+        <a class="oscurecer">
+          <img class="imagen" src="img/Unisex/unisex.jpg" class="enlaceA" onmouseover="document.getElementById('unisex').style.visibility='visible'"; onmouseout="document.getElementById('unisex').style.visibility='hidden'";>
+        </a>
+        <p id="unisex" class="leyenda">
+          Ejemplo unisex
+        </p>
+      </div>
+    </div>
+    <!--ANCLA PARA REGRESAR A INICIO-->
+    <div class="ancla">
+      <a href="seccionFem.html#inPag" class="enlaceAncla">
+        <ion-item>
+            <label class="botonAncla">Ir hacia arriba</label>
+            <ion-icon class="icon" name="arrow-up-outline"></ion-icon> 
+        </ion-item>
+      </a>
+    </div>
+    </div>
+  </main>
+<!--ANCLA INFERIOR-->
+  <a name="finPag"></a>
+<!--BARRA DE COPYRIGTH-->
+  <footer id="copy">
+    <!--PARTE IZQUIERDA-->
+    <div id="enlacesCopy">
+      <p class="copyPar">
+        <p>
+          <ion-item>
+          <a href="https://feedreader.com/online/#/reader/category/0/feed/22226190/" class="enlaceCopyrigth">
+              <label>RSS</label>
+            </a>
+            <img src="img/Otros/rssIMG.jpg" class="rssImagen">
+        </ion-item>
+        </p>
+        <p>
+          <ion-item>
+            <ion-icon class="iconCopy" name="logo-instagram"></ion-icon>
+            <a href="https://www.instagram.com/crash.maria/" class="enlaceCopyrigth">
+              <label>Síguenos en Instagram</label>
+            </a>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-icon class="iconCopy" name="logo-facebook"></ion-icon>
+            <a href="https://www.facebook.com/maria.cornejo.391" class="enlaceCopyrigth">
+              <label>Síguenos en Facebook</label>
+            </a>
+        </ion-item>
+        </p>
+      </p>
+    </div>
+    <!--PARTE DERECHA-->
+    <div id="creditosConsultas">
+      <p class="copyPar">
+        <p>
+          <ion-item class="quienSomos">
+          <a href="mailto:cornejomaria200@gmail.com" class="enlaceCopyrigth">
+          <ion-icon name="mail-outline" class="iconCopy"></ion-icon>
+            <label>Contacto</label>
+            </a>
+        </ion-item>
+        </p>
+        <label>
+          &copy; Todos los derechos reservados a CrashDesings <br>
+          Cualquier copia o uso indebido de imágenes o marcas será penalmente castigado.
+        </label>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
